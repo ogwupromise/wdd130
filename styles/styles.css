@@ -20,6 +20,9 @@ aside img {
 main img {
     width: 150px;
     height: auto;
+    border: 1px solid #333;
+    padding: 2px;
+    box-shadow: 0 0 5px #777;
 }
 
 p {
@@ -45,12 +48,4 @@ nav a {
 
 h1 {
     color: #333;
-}
-
-main img {
-    width: 150px;
-    height: auto;
-    border: 1px solid #333;
-    padding: 2px;
-    box-shadow: 0 0 5px #777;
 }
