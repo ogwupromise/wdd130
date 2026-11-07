@@ -17,6 +17,7 @@ body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background-color: #ffffff;
+    line-height: 1.6;
 }
 
 header,
@@ -27,6 +28,7 @@ footer {
     margin: 0 auto;
 }
 
+/* Header layout using CSS Grid */
 header {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -37,8 +39,15 @@ header {
 }
 
 header > img {
+    display: block;
     width: 120px;
     height: auto;
+}
+
+/* Navigation layout using Flexbox */
+header nav {
+    margin: 0;
+    padding: 0;
 }
 
 nav ul {
@@ -58,10 +67,12 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: var(--secondary-color);
 }
 
+/* Headings */
 h1,
 h2 {
     font-family: var(--heading-font);
@@ -73,18 +84,11 @@ h2 {
     margin-bottom: 16px;
 }
 
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
 p {
-    line-height: 1.6;
+    margin-bottom: 12px;
 }
 
+/* Hero section */
 .hero {
     position: relative;
 }
@@ -92,7 +96,8 @@ p {
 .hero .hero-image {
     display: block;
     width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
 }
 
 .hero h1 {
@@ -102,7 +107,7 @@ p {
     width: 100%;
     padding: 16px;
     text-align: center;
-    background-color: rgba(18, 48, 71, 0.85);
+    background-color: rgba(18, 48, 71, 0.9);
     color: #ffffff;
 }
 
@@ -111,7 +116,8 @@ p {
     left: 5%;
     right: 5%;
     bottom: 20px;
-    background-color: rgba(244, 247, 248, 0.94);
+    padding: 16px;
+    background-color: rgba(244, 247, 248, 0.96);
     color: var(--accent1-color);
     overflow: auto;
 }
@@ -124,21 +130,77 @@ p {
     border: 3px solid var(--secondary-color);
 }
 
-.history,
-.adventures {
+.hero article p {
+    margin-bottom: 0;
+}
+
+/* History section */
+.history {
     margin: 24px 0;
     padding: 20px;
 }
 
-.history p {
+.history h2 {
+    margin-bottom: 20px;
+}
+
+.history-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+.history-content p {
+    margin: 0;
     padding: 8px;
 }
 
+.history-content img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Adventures section */
 .adventures {
-    min-height: 100px;
+    margin: 24px 0;
+    padding: 20px;
     background-color: var(--accent2-color);
 }
 
+.adventures h2 {
+    margin-bottom: 20px;
+}
+
+.adventure-gallery {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    align-items: start;
+}
+
+.adventure-gallery figure {
+    min-width: 0;
+    text-align: center;
+}
+
+.adventure-gallery img {
+    display: block;
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.adventure-gallery figcaption {
+    padding: 8px 2px;
+    font-size: 12px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* Footer */
 footer {
     display: flex;
     justify-content: space-between;
@@ -151,16 +213,20 @@ footer {
 
 footer p {
     margin: 0;
+    color: #ffffff;
 }
 
 .socialmedia {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
     gap: 12px;
+    margin: 0;
+    padding: 0;
 }
 
 .socialmedia a {
-    text-decoration: none;
+    display: block;
     padding: 0;
 }
 
@@ -168,4 +234,58 @@ footer p {
     display: block;
     width: 30px;
     height: 30px;
+    object-fit: contain;
+}
+
+/* Responsive layout */
+@media (max-width: 650px) {
+    header {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    header nav {
+        width: 100%;
+    }
+
+    nav ul {
+        justify-content: center;
+    }
+
+    .hero .hero-image {
+        height: 300px;
+    }
+
+    .hero article {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+    }
+
+    .history-content {
+        grid-template-columns: 1fr;
+    }
+
+    .history-content img {
+        height: 200px;
+    }
+
+    .adventure-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .adventure-gallery img {
+        height: 150px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .socialmedia {
+        justify-content: center;
+    }
 }
