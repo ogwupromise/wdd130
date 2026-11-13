@@ -584,3 +584,142 @@ footer p {
         height: 220px;
     }
 }
+
+/* HOME PAGE */
+
+.home-hero {
+    position: relative;
+}
+
+.home-hero img {
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+}
+
+.home-hero h1 {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(18, 48, 71, 0.9);
+    font-size: 2rem;
+}
+
+.home-intro {
+    padding: 32px 20px;
+    text-align: center;
+}
+
+.home-intro p {
+    max-width: 650px;
+    margin: 0 auto 20px;
+}
+
+.home-features {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    padding: 20px;
+}
+
+.feature-card {
+    padding: 16px;
+    background-color: var(--accent2-color);
+    border: 1px solid #d5dfe3;
+    border-radius: 6px;
+}
+
+.feature-card img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.feature-card h2 {
+    margin-bottom: 12px;
+}
+
+.newsletter {
+    margin: 20px;
+    padding: 28px 20px;
+    text-align: center;
+    background-color: var(--accent2-color);
+}
+
+.newsletter > p {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.newsletter-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 14px;
+    align-items: end;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.newsletter-form div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.newsletter-form label {
+    font-weight: bold;
+}
+
+.newsletter-form input {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #697982;
+    border-radius: 4px;
+    font: inherit;
+}
+
+.newsletter-form button {
+    padding: 11px 16px;
+    border: 0;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.newsletter-form button:hover,
+.newsletter-form button:focus-visible {
+    background-color: var(--accent1-color);
+    outline: 3px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+@media (max-width: 650px) {
+    .home-hero img {
+        height: 300px;
+    }
+
+    .home-hero h1 {
+        top: 20px;
+        font-size: 1.5rem;
+    }
+
+    .home-features {
+        grid-template-columns: 1fr;
+    }
+
+    .newsletter-form {
+        grid-template-columns: 1fr;
+    }
+}
